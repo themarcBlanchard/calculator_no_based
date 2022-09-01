@@ -1,0 +1,78 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    font-weight: bolder;
+    margin: 0;
+    color: white;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.calculator-grid{
+    display: grid;
+    grid-gap: 5px;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+    justify-content: center;
+}
+
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    outline: none;
+    background-color: rgba(14, 20, 40, .50);
+    color: white;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, .20);
+}
+
+.calculator-grid > button:hover{
+    background-color: rgba(14, 20, 40, .70);
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+/* the output is going to be the entire top row*/
+.output{
+    border-radius: 5px;
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .55);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand{
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: rgba(255, 255, 255);
+    font-size: 2.5rem;
+
+}
+#ac{
+    /* From https://css.glass */
+    background-color: rgba(187, 52, 47, .5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.3px);
+    -webkit-backdrop-filter: blur(7.3px);
+    border: 1px solid rgba(187, 52, 47, .3);
+}
+
+#ac:hover{
+    background-color: rgba(187, 52, 47, .7);
+}
